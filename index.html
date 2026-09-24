@@ -20,17 +20,20 @@
 
 <!-- ============================ ITALIANO ============================ -->
 <h1>Informativa sulla privacy<br>«Gatti Cani sordi più GPS gratis»</h1>
-<p class="muted">Ultimo aggiornamento: 4 settembre 2026 · Versione app: 1.0</p>
+<p class="muted">Ultimo aggiornamento: 24 settembre 2026 · Versione app: 1.0.0 · <strong>Novità:</strong> GPS dei collari tramite il server del progetto (vedi punti 2, 3 e 4)</p>
 
 <p>Questa applicazione («l’App», nome tecnico <code>com.catsdogsdeaf.app</code>)
 è sviluppata e pubblicata da <strong>Pierluigi Ferrara</strong> (Empoli,
 Firenze, Italia). Per qualsiasi domanda: <strong>pier572@live.it</strong>.</p>
 
 <h2>1. In breve</h2>
-<p>L’App <strong>non raccoglie, non memorizza e non trasmette dati personali</strong>.
-Non ha account, non usa servizi di analisi, non mostra pubblicità di terze
-parti, non include strumenti di tracciamento. Tutto ciò che l’App fa avviene
-<strong>sul tuo dispositivo</strong>.</p>
+<p>L’App <strong>non raccoglie dati personali</strong> e non richiede
+iscrizione. Non usa servizi di analisi, non mostra pubblicità di terze parti,
+non include strumenti di tracciamento. Audio e posizione del telefono restano
+<strong>sul tuo dispositivo</strong>. L’unica eccezione è facoltativa: se usi il
+<strong>GPS dei collari</strong>, l’App si collega al server GPS del progetto
+con l’account del gattile, solo per leggere le posizioni dei suoi collari
+(punto 4).</p>
 
 <h2>2. Autorizzazioni richieste e perché</h2>
 <ul>
@@ -44,10 +47,12 @@ parti, non include strumenti di tracciamento. Tutto ciò che l’App fa avviene
     l’App è in secondo piano, con una notifica sempre visibile. Si avvia solo
     dopo un tuo tocco esplicito e si ferma quando lo fermi tu.</li>
   <li><strong>Posizione</strong> (<code>ACCESS_FINE_LOCATION</code>,
-    <code>ACCESS_COARSE_LOCATION</code>): solo per mostrarti la posizione del
-    telefono e aprirla in un’app di mappe, se scegli la modalità GPS. La
-    posizione <em>non</em> è salvata né trasmessa dall’App. Non viene richiesta
-    la posizione in background.</li>
+    <code>ACCESS_COARSE_LOCATION</code>): facoltativa, solo nella modalità GPS,
+    per calcolare <em>sul telefono</em> distanza e direzione dal telefono al
+    collare dell’animale e aprire il percorso a piedi in un’app di mappe. La
+    posizione del telefono <em>non</em> è salvata né trasmessa dall’App (al
+    server non viene mai inviata). Se la neghi, la posizione del collare si
+    vede lo stesso. Non viene richiesta la posizione in background.</li>
   <li><strong>Bluetooth</strong> (<code>BLUETOOTH</code>,
     <code>BLUETOOTH_CONNECT</code>): per inviare l’audio a uno speaker o a un
     collare Bluetooth.</li>
@@ -56,49 +61,74 @@ parti, non include strumenti di tracciamento. Tutto ciò che l’App fa avviene
   <li><strong>Sovrapposizione schermo</strong> (<code>SYSTEM_ALERT_WINDOW</code>):
     per mostrare i sottotitoli/trascrizione sopra le altre app, se attivi quella
     funzione.</li>
-  <li><strong>Internet</strong> (<code>INTERNET</code>): usato solo per
+  <li><strong>Internet</strong> (<code>INTERNET</code>): per
     <em>scaricare una volta</em> il modello vocale offline (Vosk) da
-    <code>alphacephei.com</code>. Nessun dato personale viene inviato.
-    In futuro potrà servire a collegare l’App a un server di localizzazione
-    GPS (Traccar) scelto da te: se e quando quella funzione sarà attiva,
-    questa informativa verrà aggiornata di conseguenza.</li>
+    <code>alphacephei.com</code>; per controllare all’avvio se esiste una
+    versione più recente dell’App (lettura di un piccolo file da
+    <code>pier572.github.io</code>, senza inviare dati); e, solo se usi il GPS
+    dei collari, per leggere le posizioni dei collari dal server GPS del
+    progetto (punto 4).</li>
   <li><strong>Regolazione audio</strong> (<code>MODIFY_AUDIO_SETTINGS</code>):
     per instradare l’audio verso l’uscita giusta (auricolari/speaker).</li>
 </ul>
 
 <h2>3. Dati raccolti e condivisi</h2>
-<p><strong>Nessuno.</strong> L’App non raccoglie identificatori, contatti,
-posizione, audio, file o statistiche d’uso, e non condivide nulla con terze
-parti. L’audio del microfono e la posizione sono usati «al volo» sul
-dispositivo e non sono conservati oltre l’uso immediato.</p>
+<p>L’App non raccoglie identificatori, contatti, posizione del telefono, audio,
+file o statistiche d’uso, e non condivide nulla con terze parti. L’audio del
+microfono e la posizione del telefono sono usati «al volo» sul dispositivo e
+non sono conservati oltre l’uso immediato.</p>
+<p>Restano salvati <strong>solo sul telefono</strong>, nella memoria privata
+dell’App: la lista degli animali (nome e IMEI del tracker sul collare) e, se
+lo inserisci, utente e password dell’account GPS del gattile. Disinstallando
+l’App vengono cancellati.</p>
 
-<h2>4. Link a contatti di rifugi/volontari</h2>
-<p>La schermata con l’elenco di gattili/canili contiene link e-mail e WhatsApp.
-Toccandoli si apre la <em>tua</em> app di posta o WhatsApp: è quell’app a
-gestire il messaggio, non questa.</p>
+<h2>4. GPS dei collari (facoltativo)</h2>
+<p>Il tracker GPS montato sul collare (con la sua SIM) invia da solo le proprie
+posizioni al server GPS del progetto (<code>gattili.duckdns.org</code>,
+software Traccar), gestito dallo sviluppatore. Il gattile o il volontario
+che vuole usarlo comunica allo sviluppatore l’IMEI e il nome dell’animale di
+ogni collare, e riceve un account (utente e password) collegato solo ai
+propri collari.</p>
+<p>Quando usi il GPS dei collari, l’App invia al server, su connessione
+cifrata (HTTPS), utente e password dell’account e l’IMEI del collare scelto,
+e riceve la posizione del collare, l’ora del rilevamento, lo stato e la
+batteria; con «Importa collari dal server» riceve l’elenco dei collari
+dell’account. Sul server sono conservati l’account del gattile e le
+posizioni inviate dai collari; ogni account vede solo i propri collari. La
+posizione del telefono <em>non</em> viene mai inviata al server. Per far
+cancellare un account o un collare dal server scrivi a
+<strong>pier572@live.it</strong>. Se non usi il GPS dei collari, l’App non si
+collega al server.</p>
 
-<h2>5. Minori</h2>
+<h2>5. Link a contatti di rifugi/volontari</h2>
+<p>La schermata con l’elenco di gattili/canili contiene link e-mail, WhatsApp
+e al sito <code>gattili.org</code>. Toccandoli si apre la <em>tua</em> app di
+posta, WhatsApp o il browser: è quell’app a gestire il messaggio o la
+pagina, non questa.</p>
+
+<h2>6. Minori</h2>
 <p>L’App non è rivolta a minori di 13 anni e non raccoglie consapevolmente
 dati di minori (non raccoglie dati da nessuno).</p>
 
-<h2>6. Sicurezza</h2>
-<p>Poiché nessun dato lascia il dispositivo, non c’è trasmissione né
-archiviazione remota da proteggere. Gli aggiornamenti dell’App sono
-distribuiti tramite lo store ufficiale.</p>
+<h2>7. Sicurezza</h2>
+<p>Audio e posizione del telefono non lasciano il dispositivo. Il collegamento
+al server GPS dei collari avviene solo su connessione cifrata (HTTPS), e ogni
+account accede solo ai collari del proprio gattile. Gli aggiornamenti
+dell’App sono distribuiti tramite lo store ufficiale.</p>
 
-<h2>7. Modifiche a questa informativa</h2>
+<h2>8. Modifiche a questa informativa</h2>
 <p>Eventuali modifiche saranno pubblicate a questo stesso indirizzo, con una
-nuova data in cima. Cambiamenti sostanziali (es. l’attivazione
-dell’integrazione con un server GPS) saranno indicati chiaramente.</p>
+nuova data in cima. Cambiamenti sostanziali saranno indicati chiaramente
+(come l’attivazione del GPS dei collari, il 24 settembre 2026).</p>
 
-<h2>8. Contatti</h2>
+<h2>9. Contatti</h2>
 <p>Pierluigi Ferrara — pier572@live.it — Empoli (FI), Italia.</p>
 
 <hr>
 
 <!-- ============================ ENGLISH ============================ -->
 <h1 lang="en">Privacy Policy<br>“Cats Dogs deaf plus free GPS”</h1>
-<p class="muted" lang="en">Last updated: 4 September 2026 · App version: 1.0</p>
+<p class="muted" lang="en">Last updated: 24 September 2026 · App version: 1.0.0 · <strong>New:</strong> collar GPS through the project server (see sections 2, 3 and 4)</p>
 
 <div lang="en">
 <p>This application (“the App”, technical name <code>com.catsdogsdeaf.app</code>)
@@ -106,9 +136,12 @@ is developed and published by <strong>Pierluigi Ferrara</strong> (Empoli,
 Florence, Italy). Questions: <strong>pier572@live.it</strong>.</p>
 
 <h2>1. In short</h2>
-<p>The App <strong>does not collect, store or transmit any personal data</strong>.
-No accounts, no analytics, no third-party ads, no tracking tools. Everything
-the App does happens <strong>on your device</strong>.</p>
+<p>The App <strong>does not collect personal data</strong> and needs no
+sign-up. No analytics, no third-party ads, no tracking tools. Audio and the
+phone’s location stay <strong>on your device</strong>. The only exception is
+optional: if you use the <strong>collar GPS</strong>, the App connects to the
+project’s GPS server with the shelter’s account, only to read the positions
+of its collars (section 4).</p>
 
 <h2>2. Permissions requested and why</h2>
 <ul>
@@ -122,10 +155,12 @@ the App does happens <strong>on your device</strong>.</p>
     background, with a permanent notification. It starts only after your
     explicit tap and stops when you stop it.</li>
   <li><strong>Location</strong> (<code>ACCESS_FINE_LOCATION</code>,
-    <code>ACCESS_COARSE_LOCATION</code>): only to show you the phone’s position
-    and open it in a maps app, if you choose the GPS mode. Location is
-    <em>not</em> stored or transmitted by the App. Background location is not
-    requested.</li>
+    <code>ACCESS_COARSE_LOCATION</code>): optional, GPS mode only, to compute
+    <em>on the phone</em> the distance and direction from the phone to the
+    animal’s collar and open the walking route in a maps app. The phone’s
+    location is <em>not</em> stored or transmitted by the App (it is never
+    sent to the server). If you deny it, the collar position still shows.
+    Background location is not requested.</li>
   <li><strong>Bluetooth</strong> (<code>BLUETOOTH</code>,
     <code>BLUETOOTH_CONNECT</code>): to send audio to a Bluetooth speaker or
     collar.</li>
@@ -133,41 +168,63 @@ the App does happens <strong>on your device</strong>.</p>
     the running-service notification.</li>
   <li><strong>Screen overlay</strong> (<code>SYSTEM_ALERT_WINDOW</code>): to
     show captions on top of other apps, if you enable that feature.</li>
-  <li><strong>Internet</strong> (<code>INTERNET</code>): used only to
+  <li><strong>Internet</strong> (<code>INTERNET</code>): to
     <em>download once</em> the offline speech model (Vosk) from
-    <code>alphacephei.com</code>. No personal data is sent. In the future it may
-    be used to connect the App to a GPS-tracking server (Traccar) of your
-    choice; if and when that feature ships, this policy will be updated
-    accordingly.</li>
+    <code>alphacephei.com</code>; to check at start-up whether a newer App
+    version exists (reading a small file from <code>pier572.github.io</code>,
+    sending no data); and, only if you use the collar GPS, to read the
+    collars’ positions from the project’s GPS server (section 4).</li>
   <li><strong>Audio settings</strong> (<code>MODIFY_AUDIO_SETTINGS</code>): to
     route audio to the correct output (earphones/speaker).</li>
 </ul>
 
 <h2>3. Data collected and shared</h2>
-<p><strong>None.</strong> The App collects no identifiers, contacts, location,
-audio, files or usage analytics, and shares nothing with third parties.
-Microphone audio and location are used transiently on the device and are not
-kept beyond immediate use.</p>
+<p>The App collects no identifiers, contacts, phone location, audio, files or
+usage analytics, and shares nothing with third parties. Microphone audio and
+the phone’s location are used transiently on the device and are not kept
+beyond immediate use.</p>
+<p>Saved <strong>on the phone only</strong>, in the App’s private storage: the
+list of animals (name and IMEI of the collar tracker) and, if you enter it,
+the username and password of the shelter’s GPS account. Uninstalling the App
+deletes them.</p>
 
-<h2>4. Links to shelter/volunteer contacts</h2>
-<p>The shelter-list screen contains e-mail and WhatsApp links. Tapping them
-opens <em>your</em> mail or WhatsApp app, which handles the message — not this
-App.</p>
+<h2>4. Collar GPS (optional)</h2>
+<p>The GPS tracker on the collar (with its own SIM) sends its positions by
+itself to the project’s GPS server (<code>gattili.duckdns.org</code>, Traccar
+software), run by the developer. A shelter or volunteer who wants to use it
+gives the developer the IMEI and the animal’s name for each collar, and gets
+an account (username and password) linked only to their own collars.</p>
+<p>When you use the collar GPS, the App sends the server, over an encrypted
+connection (HTTPS), the account username and password and the chosen collar’s
+IMEI, and receives the collar’s position, fix time, status and battery; with
+“Import collars from the server” it receives the account’s list of collars.
+The server keeps the shelter account and the positions sent by the collars;
+each account sees only its own collars. The phone’s location is
+<em>never</em> sent to the server. To have an account or a collar deleted from
+the server, write to <strong>pier572@live.it</strong>. If you do not use the
+collar GPS, the App does not connect to the server.</p>
 
-<h2>5. Children</h2>
+<h2>5. Links to shelter/volunteer contacts</h2>
+<p>The shelter-list screen contains e-mail, WhatsApp and <code>gattili.org</code>
+website links. Tapping them opens <em>your</em> mail app, WhatsApp or browser,
+which handles the message or page — not this App.</p>
+
+<h2>6. Children</h2>
 <p>The App is not directed to children under 13 and does not knowingly collect
 data from children (it collects data from no one).</p>
 
-<h2>6. Security</h2>
-<p>Because no data leaves the device, there is no remote transmission or
-storage to protect. App updates are delivered through the official store.</p>
+<h2>7. Security</h2>
+<p>Audio and the phone’s location never leave the device. The connection to
+the collar GPS server uses encryption only (HTTPS), and each account can reach
+only its own shelter’s collars. App updates are delivered through the
+official store.</p>
 
-<h2>7. Changes to this policy</h2>
+<h2>8. Changes to this policy</h2>
 <p>Any changes will be posted at this same URL with a new date at the top.
-Material changes (e.g. enabling the GPS-server integration) will be clearly
-indicated.</p>
+Material changes will be clearly indicated (like enabling the collar GPS, on
+24 September 2026).</p>
 
-<h2>8. Contact</h2>
+<h2>9. Contact</h2>
 <p>Pierluigi Ferrara — pier572@live.it — Empoli (FI), Italy.</p>
 </div>
 
