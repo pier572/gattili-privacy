@@ -38,8 +38,8 @@ con l’account del gattile, solo per leggere le posizioni dei suoi collari
 <h2>2. Autorizzazioni richieste e perché</h2>
 <ul>
   <li><strong>Microfono</strong> (<code>RECORD_AUDIO</code>): per amplificare in
-    tempo reale i suoni esterni verso auricolari/speaker e per l’eventuale
-    trascrizione vocale. L’audio è elaborato <em>solo sul dispositivo</em>,
+    tempo reale i suoni esterni verso auricolari/speaker e, in futuro, per la
+    trascrizione vocale (funzione in lavorazione, non ancora disponibile). L’audio è elaborato <em>solo sul dispositivo</em>,
     non viene salvato né inviato da nessuna parte.</li>
   <li><strong>Servizio in primo piano — tipo «microfono»</strong>
     (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MICROPHONE</code>):
@@ -60,10 +60,11 @@ con l’account del gattile, solo per leggere le posizioni dei suoi collari
     la notifica del servizio attivo.</li>
   <li><strong>Sovrapposizione schermo</strong> (<code>SYSTEM_ALERT_WINDOW</code>):
     per mostrare i sottotitoli/trascrizione sopra le altre app, se attivi quella
-    funzione.</li>
+    funzione (in lavorazione, non ancora disponibile).</li>
   <li><strong>Internet</strong> (<code>INTERNET</code>): per
     <em>scaricare una volta</em> il modello vocale offline (Vosk) da
-    <code>alphacephei.com</code>; per controllare all’avvio se esiste una
+    <code>alphacephei.com</code>, quando sarà disponibile la trascrizione
+    vocale (in lavorazione); per controllare all’avvio se esiste una
     versione più recente dell’App (lettura di un piccolo file da
     <code>pier572.github.io</code>, senza inviare dati); e, solo se usi il GPS
     dei collari, per leggere le posizioni dei collari dal server GPS del
@@ -147,7 +148,7 @@ of its collars (section 4).</p>
 <ul>
   <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code>): to amplify
     external sounds in real time to earphones/speakers and for optional
-    on-device speech captions. Audio is processed <em>on the device only</em>;
+    on-device speech captions (a feature in progress, not yet available). Audio is processed <em>on the device only</em>;
     it is never saved or sent anywhere.</li>
   <li><strong>Foreground service — “microphone” type</strong>
     (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MICROPHONE</code>):
@@ -167,10 +168,12 @@ of its collars (section 4).</p>
   <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>): to show
     the running-service notification.</li>
   <li><strong>Screen overlay</strong> (<code>SYSTEM_ALERT_WINDOW</code>): to
-    show captions on top of other apps, if you enable that feature.</li>
+    show captions on top of other apps, if you enable that feature (in
+    progress, not yet available).</li>
   <li><strong>Internet</strong> (<code>INTERNET</code>): to
     <em>download once</em> the offline speech model (Vosk) from
-    <code>alphacephei.com</code>; to check at start-up whether a newer App
+    <code>alphacephei.com</code>, once speech transcription is available (in
+    progress); to check at start-up whether a newer App
     version exists (reading a small file from <code>pier572.github.io</code>,
     sending no data); and, only if you use the collar GPS, to read the
     collars’ positions from the project’s GPS server (section 4).</li>
